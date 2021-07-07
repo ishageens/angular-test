@@ -1,0 +1,12 @@
+<button class="btn btn-primary">Toggle Add Player Form</button>
+<app-player-form></app-player-form>
+<hr>
+<div class="row">
+    <div class="col-xs-12">
+        <ul class="list-group">
+            <li class="list-group-item" *ngFor="let speler of spelers">
+                <p>{{speler.name}}</p>
+            </li>
+        </ul>
+    </div>
+</div>
