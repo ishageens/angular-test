@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { catchError, map } from 'rxjs/operators';
-import { Speler } from './speler';
+import { Speler } from './all-players/speler';
 
 @Injectable({
     providedIn: 'root'
@@ -13,8 +13,9 @@ export class SpelersService {
     constructor(private http: HttpClient) { }
 
     getSpelers(): Observable<Speler[]> {
-        return this.http.get<Speler[]>(this.spelersUrl).pipe(
-            catchError(this.handleError('getSpelers', [])));
+        return this.http.get<Speler[]>(this.spelersUrl).pipe(map(
+            spelers => spelers.sort((a, b) => b.points > a.points ? 1 : -1)
+        ), catchError(this.handleError('getSpelers', [])));
     }
 
     getSpeler(id: number): Observable<Speler> {

@@ -1,4 +1,4 @@
-import { Speler } from "./model/speler";
+import { Speler } from "./all-players/speler";
 import { InMemoryDbService, RequestInfo } from "angular-in-memory-web-api";
 import { Observable } from "rxjs";
 
@@ -46,6 +46,6 @@ export class InMemoryDataService implements InMemoryDbService {
                 tournamentsPlayed: 20
             }
         ];
-        return spelers;
+        return { spelers };
     }
 }
