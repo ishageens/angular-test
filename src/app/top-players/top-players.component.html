@@ -1,8 +1,11 @@
 <ol>
     <li *ngFor="let speler of spelers">
-        <p>{{speler.name}}</p>
+        <a routerLink="/players/{{speler.id}}">
+            <h4>
+                {{speler.name}}
+            </h4>
+        </a>
     </li>
 </ol>
 
-
-Hier komt een search bar, check het hoofdstuk over pipes.
+<app-player-search></app-player-search>

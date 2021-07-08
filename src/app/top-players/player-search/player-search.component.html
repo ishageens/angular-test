@@ -1,0 +1,6 @@
+<div id="search-component">
+    <h4>Player search</h4> <input #zoekBox id="zoek-box" (keyup)="zoek(zoekBox.value)" />
+    <ul>
+        <li *ngFor="let speler of spelers$ | async"> <a routerLink="/players/{{speler.id}}"> {{speler.name}} </a> </li>
+    </ul>
+</div>

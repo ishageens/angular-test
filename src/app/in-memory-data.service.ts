@@ -6,7 +6,7 @@ export class InMemoryDataService implements InMemoryDbService {
     createDb() {
         const spelers: Speler[] = [
             {
-                id: 11,
+                id: 1,
                 name: 'Andy Murray',
                 country: 'United States',
                 age: 29,
@@ -14,15 +14,15 @@ export class InMemoryDataService implements InMemoryDbService {
                 tournamentsPlayed: 17
             },
             {
-                id: 12,
+                id: 2,
                 name: 'Novak Djokovic',
                 country: 'Serbia',
-                age: 29,
+                age: 31,
                 points: 9735,
                 tournamentsPlayed: 16
             },
             {
-                id: 13,
+                id: 3,
                 name: 'Stan Wawrinkas',
                 country: 'Suisse',
                 age: 31,
@@ -30,7 +30,7 @@ export class InMemoryDataService implements InMemoryDbService {
                 tournamentsPlayed: 19
             },
             {
-                id: 14,
+                id: 4,
                 name: 'Milos Raonic',
                 country: 'Canada',
                 age: 26,
@@ -38,8 +38,8 @@ export class InMemoryDataService implements InMemoryDbService {
                 tournamentsPlayed: 20
             },
             {
-                id: 15,
-                name: 'Kei Nishikiro',
+                id: 5,
+                name: 'Kei Nishikori',
                 country: 'Japan',
                 age: 27,
                 points: 4730,

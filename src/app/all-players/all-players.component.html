@@ -1,12 +1,25 @@
-<button class="btn btn-primary">Toggle Add Player Form</button>
-<app-player-form></app-player-form>
+<button class="btn btn-primary" (click)="onToggle()">Toggle Add Player Form</button>
+<app-player-form *ngIf="(toggled)"></app-player-form>
 <hr>
-<div class="row">
-    <div class="col-xs-12">
-        <ul class="list-group">
-            <li class="list-group-item" *ngFor="let speler of spelers">
-                <p>{{speler.name}}</p>
-            </li>
-        </ul>
-    </div>
-</div>
+<table class="table table-hover">
+    <thead>
+        <th>Rank</th>
+        <th>Name</th>
+        <th>Country</th>
+        <th>Age</th>
+        <th>Points</th>
+        <th>Tournaments Played</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr class="clickable" *ngFor="let speler of spelers; let i = index" (click)="onClick(speler.id)">
+            <td>{{i + 1 }}</td>
+            <td>{{speler.name}}</td>
+            <td>{{speler.country}}</td>
+            <td>{{speler.age}}</td>
+            <td>{{speler.points}}</td>
+            <td>{{speler.tournamentsPlayed}}</td>
+            <td><button class="btn btn-danger" (click)="onDelete(speler)">x</button></td>
+        </tr>
+    </tbody>
+</table>

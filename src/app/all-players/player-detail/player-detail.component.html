@@ -1,1 +1,29 @@
-<p>player-detail works!</p>
+<div *ngIf="speler">
+    <h2>{{speler.name}} details!</h2>
+    <div class="form-group">
+        <label>id: </label>
+        <input [(ngModel)]="speler.id" placeholder="id" disabled />
+    </div>
+    <div class="form-group">
+        <label>name: </label>
+        <input [(ngModel)]="speler.name" placeholder="name" />
+    </div>
+    <div class="form-group">
+        <label>country: </label>
+        <input [(ngModel)]="speler.country" placeholder="country" />
+    </div>
+    <div class="form-group">
+        <label>age: </label>
+        <input [(ngModel)]="speler.age" placeholder="age" />
+    </div>
+    <div class="form-group">
+        <label>points: </label>
+        <input [(ngModel)]="speler.points" placeholder="points" />
+    </div>
+    <div class="form-group">
+        <label>tournaments played: </label>
+        <input [(ngModel)]="speler.tournamentsPlayed" placeholder="tournaments played" />
+    </div>
+</div>
+<button class="btn btn-primary" (click)="onBack()">Back</button>
+<button class="btn btn-primary" (click)="onSave()">Save</button>
